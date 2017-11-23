@@ -15,7 +15,9 @@ $(function(){
 			alert("发送url为空！");
 			return false;
 		}else{
-			$.submit(sendUrl,null);
+			$.post(sendUrl,null,function(data, textStatus, jqXHR){
+				$("#txt").val(data);
+			});
 		}
 	}
  );
@@ -31,6 +33,8 @@ function send(url){
 <a href="http://www.baidu.com">点击我去百度</a>
 <input type="text" id="sendUrl" />
 <input type="button" id="sendBtn" value="发送button"/>
+<textarea id="txt">
+</textarea>
 </div>
 </body>
 </html>
