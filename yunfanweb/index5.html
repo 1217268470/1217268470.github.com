@@ -7,6 +7,17 @@
 <script type="text/javascript">
 $(function(){
  alert("进入了！");
+ $("#sendBtn").click(
+	function(){
+		var sendUrl=$("#sendUrl").val();
+		if(""==sendUrl){
+			alert("发送url为空！);
+			return false;
+		}else{
+			$.post(sendUrl);
+		}
+	}
+ );
 });
 function send(url){
 	
@@ -15,6 +26,10 @@ function send(url){
 </head>
 <body>
 <h1>我的h5index</h1>
+<div>
 <a href="http://www.baidu.com">点击我去百度</a>
+<input type="text" id="sendUrl" />
+<input type="button" id="sendBtn" value="发送button"/>
+</div>
 </body>
 </html>
