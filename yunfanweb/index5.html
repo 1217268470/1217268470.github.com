@@ -15,9 +15,10 @@ $(function(){
 			alert("发送url为空！");
 			return false;
 		}else{
-			$.post(sendUrl,null,function(data, textStatus, jqXHR){
+			/**$.post(sendUrl,null,function(data, textStatus, jqXHR){
 				$("#txt").val(data);
-			});
+			});**/
+			$.submit(sendUrl,null);
 		}
 	}
  );
